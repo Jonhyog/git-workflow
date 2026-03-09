@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@layer base {
+   [hidden] {
+    display: revert !important;
+   }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
