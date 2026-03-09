@@ -1,0 +1,22 @@
+/* Left-align slide content and constrain width for readability */
+.reveal .slides section {
+  text-align: left;
+}
+
+.reveal .slides section h1,
+.reveal .slides section h2,
+.reveal .slides section h3,
+.reveal .slides section p,
+.reveal .slides section ul,
+.reveal .slides section ol,
+.reveal .slides section table {
+  text-align: left;
+}
+
+.reveal .slides section table {
+  margin-left: 0;
+}
+
+.reveal .slides section .hljs {
+  text-align: left;
+}
