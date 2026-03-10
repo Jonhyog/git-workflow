@@ -37,7 +37,7 @@ export default function RevealDeck() {
     <div className="reveal" ref={deckDivRef}>
       <div className="slides">
         <section
-          data-markdown="/slides/git-workflow.md"
+          data-markdown="slides/git-workflow.md"
           data-separator="^\r?\n---\r?\n$"
           data-separator-vertical="^\r?\n----\r?\n$"
           data-separator-notes="^Note:"
