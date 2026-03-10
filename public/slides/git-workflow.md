@@ -3,7 +3,7 @@
 ### Practical Git for Teams
 
 Note:
-Welcome! This session is about practical Git for teams. We'll cover basics, fixing commits, conventional commits, and how to keep history clean. Press S during the presentation to open speaker view in a separate window.
+Hey team, first and foremost thank you all for coming. I hope this is the first of many KT sessions we'll have and that this will be beneficial for everyone, not only the app team. With our team growing and our discussions about branch strategies and release plans, we've felt that having this session to share a bit about other Git workflows would be great for us and help improve how we work together. So let's get started!
 
 ---
 
@@ -18,14 +18,14 @@ Welcome! This session is about practical Git for teams. We'll cover basics, fixi
 * Why a clean history matters
 
 Note:
-Quick roadmap: we'll start with what Git is and core concepts, then move to fixing mistakes, conventional commits, team workflows, and finally merge vs rebase and why clean history matters.
+Quick roadmap: we'll start with what Git is and core concepts and commands, then move to fixing mistakes, conventional commits, team workflows, and finally merge vs rebase and why clean history matters.
 
 ---
 
 # Part 1 — Git Basics
 
 Note:
-First part: Git basics. We'll define Git, the mental model, and core concepts so everyone is on the same page.
+I know this might feel a bit too basic, but let's get everyone on the same page — not all of us come from a development or engineering background. I promise this will be quick.
 
 ----
 
@@ -43,7 +43,7 @@ It allows developers to:
 Created in **2005 by Linus Torvalds** to manage the Linux kernel.
 
 Note:
-Emphasize: Git is distributed—every clone has full history. It's not just "version control"; it's the standard for collaboration in software.
+Emphasize: It's not just "version control"; it's the standard for collaboration in software. Why is Git the standard? Surely there's a reason everyone uses it.
 
 ----
 
@@ -79,7 +79,7 @@ Snapshots vs diffs: Git stores the full state at each commit. That's why branchi
 * **HEAD**: Your current position in the repository
 
 Note:
-Repository = the project. Commit = snapshot. Branch = pointer. HEAD = where you are. Keep this vocabulary consistent when talking to the team.
+Now that we have a baseline understanding of how Git works, we need to define a few key concepts. Most of these will be familiar to you. We use them daily, but might never have deep-dived into what's going on under the hood.
 
 ----
 
@@ -129,7 +129,7 @@ git checkout feature/login
 ```
 
 Note:
-Run these in a sample repo: init, first commit, create branch, switch. Mention that git switch / git checkout are both valid; switch is clearer for branches.
+For the sake of time, we won't actually run those commands in the terminal right now. We'll use most of them during the remainder of the presentation. Either way, if you're not that familiar with Git, I strongly recommend running those commands and trying them out yourself.
 
 ---
 
@@ -151,7 +151,7 @@ Common situations:
 Git provides tools to **fix history before sharing it**.
 
 Note:
-Key point: fix before you push. Once pushed, rewriting affects everyone; before push, it's your local sandbox.
+Like commits, we aren't always perfect. Git provides the tools we need to amend our mistakes and make great code as a team. So how can we fix our commits?
 
 ----
 
@@ -231,9 +231,9 @@ Example with several commits:
 
 ```
 feat(auth): add logout
-feat(auth): add logut analytics events
+feat(auth): add logout analytics events
 refactor(auth): clean up OAuth implementation
-fixup! feat(auth): add logut analytics events
+fixup! feat(auth): add logout analytics events
 ```
 
 Note:
@@ -571,13 +571,13 @@ Autosquash during interactive rebase moves fixup! commits and folds them in. You
 
 ## Reading Rebase Diffs
 
-Rember - Rebase changes commit hashes.
+Remember — rebase changes commit hashes.
 
 This may cause:
 * confusing diffs
 * commits appearing as if they were new
 
-**Tip:** See custom diff between pushes in your git system, not the whole diff
+**Tip:** Use your Git host's diff view between your branch and the target (e.g. "changes since base"), not the full history diff.
 
 Note:
 After rebase, the same change can show as "new" in the PR because the hash changed. Use your Git host's "changes since base" or compare against the target branch, not "all commits."
