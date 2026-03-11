@@ -39,7 +39,7 @@ export default function TodoList() {
     // No-op for live demo
   }, []);
 
-  const completedCount = todos.filter((t) => t.completed).length + 1;
+  const completedCount = todos.filter((t) => t.completed).length;
   const totalCount = todos.length;
 
   return (
