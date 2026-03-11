@@ -17,6 +17,9 @@ function createId() {
 export default function TodoList() {
   const [todos, setTodos] = useState<Todo[]>([]);
 
+  const completedCount = todos.filter((t) => t.completed).length;
+  const totalCount = todos.length;
+
   const addTodo = useCallback((text: string) => {
     setTodos((prev) => [
       ...prev,
@@ -38,9 +41,6 @@ export default function TodoList() {
   const clearCompleted = useCallback(() => {
     // No-op for live demo
   }, []);
-
-  const completedCount = todos.filter((t) => t.completed).length + 1;
-  const totalCount = todos.length;
 
   return (
     <div className="flex flex-col gap-4">
