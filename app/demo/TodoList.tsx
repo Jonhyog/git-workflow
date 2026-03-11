@@ -37,9 +37,8 @@ export default function TodoList() {
     setTodos((prev) => prev.filter((t) => t.id !== id));
   }, []);
 
-  // TODO: implement clearCompleted - remove all todos where completed === true
   const clearCompleted = useCallback(() => {
-    // No-op for live demo
+    setTodos((prev) => prev.filter((t) => !t.completed));
   }, []);
 
   return (
